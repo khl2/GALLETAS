@@ -1,0 +1,49 @@
+`<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galletas Kahlip</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#fff8f0;color:#4b3124}
+header{background:#5c4033;color:#fff;padding:30px;text-align:center}
+h2{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px;max-width:1200px;margin:auto}
+.card{background:#fff;border-radius:16px;box-shadow:0 4px 12px #0002;padding:15px;text-align:center;position:relative}
+.card img{width:100%;height:220px;object-fit:contain}
+.badge{position:absolute;top:10px;left:10px;background:#d60000;color:#fff;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:bold}
+button{background:#9c6b3e;color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer}
+dialog{border:none;border-radius:18px;padding:20px;max-width:400px}
+</style>
+</head>
+<body>
+<header><h1>🍪 Galletas Kahlip 🍪</h1><p>Hechas con amor</p></header>
+
+<h2>🌟 Exclusivos</h2>
+<div class="grid">
+<div class="card"><div class="badge">EXCLUSIVO</div><img src="A1.jpeg"><h3>Galleta de Arándanos</h3><button onclick="ver('Galleta de Arándanos','Solo por temporada.<br>Arándanos frescos de temporada y glaseado de queso crema.<br><b>Grande: $50 c/u</b>')">Ver</button></div>
+<div class="card"><div class="badge">EXCLUSIVO</div><img src="N1.jpeg"><h3>Galletas de Navidad</h3><button onclick="ver('Galletas de Navidad','Temporada navideña.<br><b>$15 c/u o 2 x $25</b>')">Ver</button></div>
+<div class="card"><div class="badge">EXCLUSIVO</div><img src="H1.jpeg"><h3>Galletas de Halloween</h3><button onclick="ver('Galletas de Halloween','Temporada de Halloween.<br><b>$20 c/u</b>')">Ver</button></div>
+</div>
+
+<h2>🍪 Nuestro Menú</h2>
+<div class="grid">
+<div class="card"><img src="CH3.jpeg"><h3>Chispas de Chocolate</h3><button onclick="ver('Chispas de Chocolate','Harina normal con chips de chocolate.<br>Mediana: $15 c/u o 2 x $25.<br>Grande: $20 c/u')">Ver</button></div>
+<div class="card"><img src="G1.jpeg"><h3>Galledonas</h3><button onclick="ver('Galledonas','Mantequilla y glaseado de vainilla.<br>Mediana: 2 x $25.<br>Grande: $30 c/u')">Ver</button></div>
+<div class="card"><img src="B1.jpeg"><h3>Vetonadas</h3><button onclick="ver('Vetonadas','Vainilla, mantequilla y glaseado de limón.<br>Mediana: $15 c/u o 2 x $25.<br>Grande: $30 c/u')">Ver</button></div>
+<div class="card"><img src="MN1.jpeg"><h3>Galletas de Mantequilla</h3><button onclick="ver('Galletas de Mantequilla','Decoradas con azúcar glass y chispas de colores.<br>Mediana: $10 c/u o 2 x $25.<br>Grande: $20 y $25')">Ver</button></div>
+<div class="card"><img src="P1.jpeg"><h3>Cakedoggs</h3><button onclick="ver('Cakedoggs','Con su respectivo sobre de croqueta escogida por el anfitrión, acompañada de snack alrededor y un listón decorativo.<br><b>$98</b>')">Ver</button></div>
+</div>
+
+<dialog id="d"><h3 id="t"></h3><p id="c"></p><button onclick="comprar()">Comprar por WhatsApp</button> <button onclick="d.close()">Cerrar</button></dialog>
+
+<script>
+let prod="";
+function ver(n,txt){prod=n;t.innerHTML=n;c.innerHTML=txt;d.showModal();}
+function comprar(){
+let tel="526131408903";
+location.href="https://wa.me/"+tel+"?text="+encodeURIComponent("Hola, me interesa comprar "+prod+" de Galletas Kahlip.");
+}
+</script>
+</body>
+</html>
